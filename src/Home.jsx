@@ -1,3 +1,4 @@
+import FAQSection from "./components/Faq";
 import FeaturedMovies from "./components/FeaturedMovies";
 import HeroBanner from "./components/HeroBanner";
 
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
             <HeroBanner />
             <FeaturedMovies />
+            <FAQSection />
         </div>
     );
 };
