@@ -1,9 +1,10 @@
+import HeroBanner from "./components/HeroBanner";
 
 
 const Home = () => {
     return (
         <div>
-            hello
+            <HeroBanner />
         </div>
     );
 };
