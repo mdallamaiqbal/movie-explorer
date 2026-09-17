@@ -1,16 +1,28 @@
-# React + Vite
+# 🎬 Movie Explorer Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and cinematic front-end web application built for discovering movies and TV shows. Designed with a sleek Netflix-inspired dark theme, it offers seamless navigation, a powerful real-time search bar, an interactive details modal, and an engaging FAQ section.
 
-Currently, two official plugins are available:
+## 🌟 Live Demo
+🔗 **Explore Live Application:** [https://movie-explorer-rho-taupe.vercel.app]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Cinematic Dark Theme:** Immersive full-black (`bg-black`) UI design with vibrant red accents and professional card layouts tailored for movie lovers.
+* **Dynamic Hero Banner:** An engaging landing banner capturing the ultimate streaming platform aesthetic.
+* **Trending Movies Section:** Showcases top-rated TV shows and movies directly on the home page with smooth hover animations.
+* **Real-Time Search Bar:** Instantly filter and find any movie or TV show dynamically as you type, powered seamlessly by the TVMaze API.
+* **Interactive Details Modal:** Clicking on any movie card or "See Details" button opens a gorgeous popup modal containing ratings, release dates, genres, network info, and full HTML summaries.
+* **FAQ Section:** Accordion-style Frequently Asked Questions component providing clear guidance for users.
+* **Fully Responsive:** Optimized fluidly for mobile phones, tablets, and desktop displays.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+* **Frontend Library:** React (Vite)
+* **Styling Framework:** Tailwind CSS, DaisyUI
+* **Routing:** React Router DOM
+* **API Integration:** TVMaze API (`https://api.tvmaze.com/shows`)
+* **Deployment:** Vercel
