@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import MovieCard from "./components/MovieCard";
+import MovieDetailsModal from "./components/MovieDetailsModal";
 
 
 const Movies = () => {
     const [movies, setMovies] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
     const [loading, setLoading] = useState(true);
+    const [selectedMovie, setSelectedMovie] = useState(null);
 
     useEffect(() => {
         setLoading(true);
@@ -19,7 +21,6 @@ const Movies = () => {
                 const formattedMovies = searchQuery 
                     ? data.map(item => item.show) 
                     : data;
-                
                 setMovies(formattedMovies);
                 setLoading(false);
             })
@@ -30,7 +31,7 @@ const Movies = () => {
     }, [searchQuery]);
 
     return (
-        <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="max-w-6xl mx-auto px-4 py-8 relative">
             <div className="mb-8">
                 <input 
                     type="text" 
@@ -40,13 +41,18 @@ const Movies = () => {
                     className="w-full p-4 bg-gray-900 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-red-600 shadow-md"
                 />
             </div>
+
             {loading ? (
                 <div className="text-center py-20 text-white text-xl">Loading movies...</div>
             ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {movies.length > 0 ? (
                         movies.map(movie => (
-                            <MovieCard key={movie.id} movie={movie} />
+                            <MovieCard 
+                                key={movie.id} 
+                                movie={movie} 
+                                onDetailsClick={() => setSelectedMovie(movie)} 
+                            />
                         ))
                     ) : (
                         <div className="col-span-full text-center text-gray-400 py-10 text-lg">
@@ -55,6 +61,11 @@ const Movies = () => {
                     )}
                 </div>
             )}
+
+            <MovieDetailsModal
+                movie={selectedMovie} 
+                onClose={() => setSelectedMovie(null)} 
+            />
         </div>
     );
 };
